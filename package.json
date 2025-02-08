@@ -24,7 +24,10 @@
     "typecheck": "tsc",
     "typegen": "wrangler types",
     "preview": "pnpm run build && pnpm run start",
-    "prepare": "husky"
+    "prepare": "husky",
+    "install": "pnpm install",
+    "cf:build": "pnpm install && pnpm run build",
+    "cf:deploy": "pnpm run cf:build && wrangler pages deploy"
   },
   "engines": {
     "node": ">=18.18.0"
@@ -133,9 +136,6 @@
     "vitest": "^2.1.7",
     "wrangler": "^3.91.0",
     "zod": "^3.24.1"
-  },
-  "resolutions": {
-    "@typescript-eslint/utils": "^8.0.0-alpha.30"
   },
   "packageManager": "pnpm@9.4.0"
 }
